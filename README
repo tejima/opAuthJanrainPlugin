@@ -8,15 +8,15 @@ Facebook Twitter GoogleなどのIDを利用したシングルサインオンを�
 
 ■■設定
 ・Janrainサービスに登録しOpenPNEのサイト情報を登録する
-・APIKEYを管理画面に設定する
-・FacebookやTwitterを利用する場合は、それぞれのサイトで開発登録が必要
+・APIKEYとJanrainで登録したユーザーネームを管理画面に設定する
+・FacebookやTwitterを利用する場合は、それぞれのサイトのAPIキーを取得しJanrain管理画面で設定する必要がある
 
 ■■TODO
 ・READMEを分かりやすく
 ・モバイルどうしようか？
 ・die()で終わらせているところをエラー処理する
-・ログイン先が固定になっているので、getURIからセットするようにする。
 
-
-
+■■MEMO
+作成のためにここを参考にした
+https://bitbucket.org/repeatedly/opauthshibbolethplugin/src/f2a263fb10cb/apps/pc_frontend/templates/_partsLogin.php
 
