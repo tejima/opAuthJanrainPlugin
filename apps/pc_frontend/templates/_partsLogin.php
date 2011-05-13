@@ -1,8 +1,7 @@
 <?php if ($form->getAuthMode() === 'Janrain'): ?>
 
 <a class="rpxnow" onclick="return false;"
-href="https://tejima.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Fa2m.sv1.pne.jp%2Fmember%2Flogin%2FauthMode%2FJanrain"> Sign In </a>
-
+href="https://<?php echo Doctrine::getTable('SnsConfig')->get('zuniv.us.janrain_username') ?>.rpxnow.com/openid/v2/signin?token_url=<?php echo urlencode($form->getAuthAdapter()->getTokenURL()) ?>"> Sign In </a>
 
 <script type="text/javascript">
   var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");

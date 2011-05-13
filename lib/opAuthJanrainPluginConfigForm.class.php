@@ -3,18 +3,22 @@ class opAuthJanrainPluginConfigForm extends sfForm
 {
   protected $configs = array(
     'zuniv.us.janrain_api_key' => 'zuniv.us.janrain_api_key',
+    'zuniv.us.janrain_username' => 'zuniv.us.janrain_username',
   );
   public function configure()
   {
     $this->setWidgets(array(
       'zuniv.us.janrain_api_key' => new sfWidgetFormInput(),
+      'zuniv.us.janrain_username' => new sfWidgetFormInput(),
     ));
     $this->setValidators(array(
       'zuniv.us.janrain_api_key' => new sfValidatorString(array(),array()),
+      'zuniv.us.janrain_username' => new sfValidatorString(array(),array()),
     ));
 
 
     $this->widgetSchema->setHelp('zuniv.us.janrain_api_key', 'Janrain API Key');
+    $this->widgetSchema->setHelp('zuniv.us.janrain_username', 'Janrain Username');
 
     foreach($this->configs as $k => $v)
     {

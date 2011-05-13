@@ -12,26 +12,18 @@
  */
 class opAuthAdapterJanrain extends opAuthAdapter
 {
+    //$urlCallback = null,
   protected
-    $authModuleName = 'Janrain',
-    $consumerKey = null,
-    $consumerSecret = null,
-    $urlCallback = null,
-    $urlApiRoot = null,
-    $urlAuthorize = null,
-    $urlAuthenticate = null;
+    $authModuleName = 'Janrain';
 
   public function configure()
   {
-    $this->consumerKey = $this->getAuthConfig('awt_consumer');
-    $this->consumerSecret = $this->getAuthConfig('awt_secret');
     $this->urlCallback = $this->getRequest()->getUri();
-    $this->urlApiRoot = "http://api.twitter.com/";
-    $this->urlAuthorize = "https://twitter.com/oauth/authorize?oauth_token=";
-    $this->urlAuthenticate = "http://twitter.com/oauth/authenticate?oauth_token=";
   }
 
-
+  public function getTokenURL(){
+    return sfConfig::get("op_base_url",null)."/member/login/authMode/Janrain";
+  }
   public function authenticate()
   {
     $result = parent::authenticate();
