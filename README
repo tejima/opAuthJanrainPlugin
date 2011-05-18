@@ -21,6 +21,7 @@ Facebook Twitter GoogleなどのIDを利用したシングルサインオンを�
 ■■TODO
 ・READMEを分かりやすく
 ・die()で終わらせているところをエラー処理する
+・Twitterとの接続がうまくいっていない気がするので、要確認。
 
 ■■MEMO
 作成のためにここを参考にした
