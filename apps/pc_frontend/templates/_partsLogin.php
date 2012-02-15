@@ -29,8 +29,7 @@
 })();
 </script>
 
-<div id="janrainEngageEmbed"></div>
-
+<a class="janrainEngage" href="#">Sign-In</a>
 
 <?php else: ?>
 
