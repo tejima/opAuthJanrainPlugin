@@ -1,11 +1,10 @@
 <?php if ($form->getAuthMode() === 'Janrain'): ?>
-
 <script type="text/javascript">
 (function() {
     if (typeof window.janrain !== 'object') window.janrain = {};
-    window.janrain.settings = {};
+    if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
     
-    janrain.settings.tokenUrl =  "<?php echo $form->getAuthAdapter()->getTokenURL() ?>";
+    janrain.settings.tokenUrl = '<?php echo $form->getAuthAdapter()->getTokenURL() ?>';
 
     function isReady() { janrain.ready = true; };
     if (document.addEventListener) {
@@ -20,17 +19,14 @@
 
     if (document.location.protocol === 'https:') {
       e.src = 'https://rpxnow.com/js/lib/<?php echo Doctrine::getTable('SnsConfig')->get('zuniv.us.janrain_username') ?>/engage.js';
-    } else {
-      e.src = 'http://widget-cdn.rpxnow.com/js/lib/<?php echo Doctrine::getTable('SnsConfig')->get('zuniv.us.janrain_username') ?>/engage.js';
+    } else {      e.src = 'http://widget-cdn.rpxnow.com/js/lib/<?php echo Doctrine::getTable('SnsConfig')->get('zuniv.us.janrain_username') ?>/engage.js';
     }
 
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(e, s);
 })();
 </script>
-
-<a class="janrainEngage" href="#">Sign-In</a>
-
+<div id="janrainEngageEmbed"></div>
 <?php else: ?>
 
 
