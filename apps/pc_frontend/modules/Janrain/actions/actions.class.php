@@ -27,4 +27,9 @@ class janrainActions extends sfActions
   {
     $this->forward('default', 'module');
   }
+
+  public function executeRegisterEnd(sfWebRequest $request)
+  {
+    $this->redirect('@homepage');
+  }
 }
